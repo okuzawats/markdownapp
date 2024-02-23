@@ -7,8 +7,12 @@
 ## 環境構築
 
 ```console
-% node -v
+$ node -v
 v20.2.0
-% npm -v
+$ npm -v
 9.7.2
+```
+
+```console
+$ npm install webpack@5 webpack-cli@4
 ```
