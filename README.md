@@ -16,3 +16,16 @@ $ npm -v
 ```console
 $ npm install webpack@5 webpack-cli@4
 ```
+
+## ビルド
+
+```console
+$ npm run build
+```
+`./dist/index.js` にファイルが出力される。
+
+デバッグ用実行は以下のコマンド。
+
+```console
+$ node ./dist/index.js
+```
