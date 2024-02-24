@@ -14,7 +14,7 @@ $ npm -v
 ```
 
 ```console
-$ npm i webpack@5 webpack-cli@4 typescript@4
+$ npm i webpack@5 webpack-cli@4 typescript@4 ts-loader@9
 ```
 
 ## ビルド
