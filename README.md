@@ -16,7 +16,8 @@ $ npm -v
 ```console
 $ npm i webpack@5 webpack-cli@4
 $ npm i typescript@4 ts-loader@9
-$ npm i npm i react@17 react-dom@17 @types/react@17 @types/react-dom@17
+$ npm i react@17 react-dom@17 @types/react@17 @types/react-dom@17
+$ npm i styled-components@5 @types/styled-components@5
 ```
 
 開発用
