@@ -19,6 +19,12 @@ $ npm i typescript@4 ts-loader@9
 $ npm i npm i react@17 react-dom@17 @types/react@17 @types/react-dom@17
 ```
 
+開発用
+
+```console
+$ npm i webpack-dev-server@3
+```
+
 ## ビルド
 
 ```console
@@ -26,8 +32,8 @@ $ npm run build
 ```
 `./dist/index.js` にファイルが出力される。
 
-デバッグ用実行は以下のコマンド。
+デバッグ用実行は以下のコマンド。`webpack-dev-server` により、ローカル環境で実行される。
 
 ```console
-$ node ./dist/index.js
+$ npm start
 ```
