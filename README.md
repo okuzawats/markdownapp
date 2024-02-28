@@ -1,6 +1,6 @@
 # Markdown App
 
-[React × TypeScript で手を動かながら学ぶ！モダンなフロントエンド開発入門 | Techpit](https://www.techpit.jp/courses/111)で作るMarkdownアプリです。
+[React × TypeScript で手を動かながら学ぶ！モダンなフロントエンド開発入門](https://www.techpit.jp/courses/111)で作るMarkdownアプリです。
 
 * [URL](https://okuzawats.github.io/markdownapp/)
 
