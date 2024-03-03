@@ -18,7 +18,6 @@ const StyledButton = styled.button`
   }
 `
 
-// Buttonコンポーネントに渡すパラメータの型
 // TODO キャンセル用のコンポーネントを作成して分離する。
 interface Props {
   cancel?: Boolean
@@ -27,8 +26,10 @@ interface Props {
 }
 
 // テキストとクリック時に呼び出される関数を受け取り、スタイリングされたボタンを返すコンポーネント
-export const Button: React.FC<Props> = (props) => (
-  <StyledButton onClick={props.onClick} className={props.cancel ? 'cancel' : ''}>
-    {props.children}
-  </StyledButton>
-)
+export const Button: React.FC<Props> = (props) => {
+  return (
+    <StyledButton onClick={props.onClick} className={props.cancel ? 'cancel' : ''}>
+        {props.children}
+    </StyledButton>
+  )
+}
