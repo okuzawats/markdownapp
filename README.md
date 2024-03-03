@@ -19,6 +19,7 @@ $ npm i typescript@4 ts-loader@9
 $ npm i react@17 react-dom@17 @types/react@17 @types/react-dom@17
 $ npm i styled-components@5 @types/styled-components@5
 $ npm i react-markdown@6
+$ npm i dexie@3
 ```
 
 開発用
