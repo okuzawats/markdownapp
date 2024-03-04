@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import { Editor } from './pages/editor'
+import { History } from './pages/history'
 
 const GlobalStyle = createGlobalStyle`
   body * {
@@ -23,7 +24,7 @@ const Main = (
         <Editor />
       </Route>
       <Route exact path="/history">
-        <h1>History</h1>
+        <History />
       </Route>
       <Redirect to="/editor" path="*" />
     </Router>
