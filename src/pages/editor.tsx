@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as ReactMarkdown from 'react-markdown'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Button } from '../components/button'
 import { SaveModal } from '../components/save_modal'
@@ -74,6 +75,9 @@ export const Editor: React.FC = () => {
           <Button onClick={() => setShowModal(true)}>
             保存
           </Button>
+          <Link to="/history">
+            履歴
+          </Link>
         </HeaderControl>
       </Header>
       <Wrapper>
