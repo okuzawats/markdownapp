@@ -18,3 +18,10 @@ export const putMemo = async(title: string, text: string): Promise<void> => {
   const datetime = new Date().toISOString()
   await memos.put({ datetime, title, text })
 }
+
+// 非同期で読み込み、datetimeの逆順の配列を返す。
+export const getMemos = (): Promise<MemoRecord[]> => {
+  return memos.orderBy('datetime')
+    .reverse()
+    .toArray()
+}
