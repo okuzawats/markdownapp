@@ -6,8 +6,10 @@ import { Button } from '../components/button'
 import { Header } from '../components/header'
 import { SaveModal } from '../components/save_modal'
 import { putMemo } from '../db/memos'
+import TestWorker from 'worker-loader!../worker/test.ts'
 
-const { useState } = React
+const testWorker = new TestWorker()
+const { useState, useEffect } = React
 
 const Wrapper = styled.div`
   bottom: 0;
@@ -55,6 +57,16 @@ interface Props {
 export const Editor: React.FC<Props> = (props) => {
   const { text, setText } = props
   const [showModal, setShowModal] = useState(false)
+
+  useEffect(() => {
+    testWorker.onmessage = (event) => {
+      console.log('Main thread Received:', event.data)
+    }
+  }, [])
+
+  useEffect(() => {
+    testWorker.postMessage(text)
+  }, [text])
 
   return(
     <>
