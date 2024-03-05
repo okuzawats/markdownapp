@@ -21,6 +21,7 @@ $ npm i react-router-dom@5 @types/react-router-dom@5
 $ npm i styled-components@5 @types/styled-components@5
 $ npm i react-markdown@6
 $ npm i dexie@3
+$ npm i worker-loader@3
 ```
 
 開発用
