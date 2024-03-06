@@ -6,9 +6,9 @@ import { Button } from '../components/button'
 import { Header } from '../components/header'
 import { SaveModal } from '../components/save_modal'
 import { putMemo } from '../db/memos'
-import TestWorker from 'worker-loader!../worker/test.ts'
+import MarkdownWorker from 'worker-loader!../worker/convert_markdown_worker.ts'
 
-const testWorker = new TestWorker()
+const testWorker = new MarkdownWorker()
 const { useState, useEffect } = React
 
 const Wrapper = styled.div`
