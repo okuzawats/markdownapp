@@ -20,6 +20,7 @@ $ npm i react@17 react-dom@17 @types/react@17 @types/react-dom@17
 $ npm i react-router-dom@5 @types/react-router-dom@5
 $ npm i styled-components@5 @types/styled-components@5
 $ npm i react-markdown@6
+$ npm i marked@2 @types/marked@2
 $ npm i dexie@3
 $ npm i worker-loader@3
 ```
