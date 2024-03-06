@@ -39,7 +39,7 @@ interface Props {
 }
 
 // 保存処理の実行確認を表示するモーダルのコンポーネント
-export const SaveModal: React.FC<Props> = props => {
+export const SaveModal: React.FC<Props> = (props) => {
   const { onCancel, onSave } = props
   const [title, setTitle] = useState(new Date().toISOString())
 
@@ -59,9 +59,7 @@ export const SaveModal: React.FC<Props> = props => {
           <Button onClick={onCancel} cancel={true}>
             キャンセル
           </Button>
-          <Button onClick={() => onSave(title)}>
-            保存
-          </Button>
+          <Button onClick={() => onSave(title)}>保存</Button>
         </Control>
       </Modal>
     </Wrapper>

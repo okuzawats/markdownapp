@@ -10,9 +10,8 @@ worker.addEventListener('message', (event) => {
   const text = event.data
   // HTMLのサニタイズ。
   // h1、h2はデフォルトで除外されているため追加している。
-  const html = sanitizeHtml(
-    marked(text),
-    { allowedTags: [...sanitizeHtml.defaults.allowedTags, 'h1', 'h2']}
-  )
+  const html = sanitizeHtml(marked(text), {
+    allowedTags: [...sanitizeHtml.defaults.allowedTags, 'h1', 'h2'],
+  })
   worker.postMessage({ html })
 })

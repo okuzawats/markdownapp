@@ -1,17 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import {
-  Link,
-  useHistory,
-} from 'react-router-dom'
-import {
-  Header,
-} from '../components/header'
-import {
-  getMemoPageCount,
-  getMemos,
-  MemoRecord,
-} from '../db/memos'
+import { Link, useHistory } from 'react-router-dom'
+import { Header } from '../components/header'
+import { getMemoPageCount, getMemos, MemoRecord } from '../db/memos'
 
 const { useState, useEffect } = React
 
@@ -103,17 +94,15 @@ export const History: React.FC<Props> = (props) => {
     getMemos(targetPage).then(setMemos)
   }
 
-  return(
+  return (
     <>
       <HeaderArea>
         <Header title="履歴">
-          <Link to ="/editor">
-            編集画面に戻る
-          </Link>
+          <Link to="/editor">編集画面に戻る</Link>
         </Header>
       </HeaderArea>
       <Wrapper>
-        {memos.map(memo => (
+        {memos.map((memo) => (
           <Memo
             key={memo.datetime}
             onClick={() => {
@@ -121,12 +110,8 @@ export const History: React.FC<Props> = (props) => {
               history.push('/editor')
             }}
           >
-            <MemoTitle>
-              {memo.title}
-            </MemoTitle>
-            <MemoText>
-              {memo.text}
-            </MemoText>
+            <MemoTitle>{memo.title}</MemoTitle>
+            <MemoText>{memo.text}</MemoText>
           </Memo>
         ))}
       </Wrapper>

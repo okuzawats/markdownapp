@@ -1,10 +1,6 @@
 import * as React from 'react'
 import { render } from 'react-dom'
-import {
-  HashRouter as Router,
-  Route,
-  Redirect,
-} from 'react-router-dom'
+import { HashRouter as Router, Route, Redirect } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import { Editor } from './pages/editor'
 import { History } from './pages/history'
@@ -19,22 +15,17 @@ const GlobalStyle = createGlobalStyle`
 const StorageKey = '/editor:text'
 
 const Main: React.FC = () => {
-  const [text, setText] = useStateWithStorage("", StorageKey)
+  const [text, setText] = useStateWithStorage('', StorageKey)
 
   return (
     <>
       <GlobalStyle />
       <Router>
         <Route exact path="/editor">
-          <Editor
-            text={text}
-            setText={setText}
-          />
+          <Editor text={text} setText={setText} />
         </Route>
         <Route exact path="/history">
-          <History
-            setText={setText}
-          />
+          <History setText={setText} />
         </Route>
         <Redirect to="/editor" path="*" />
       </Router>

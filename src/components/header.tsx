@@ -32,12 +32,7 @@ interface Props {
 
 export const Header: React.FC<Props> = (props) => (
   <HeaderWrapper>
-    <HeaderTitle>
-      {props.title}
-    </HeaderTitle>
-    <HeaderControl>
-      {props.children}
-    </HeaderControl>
+    <HeaderTitle>{props.title}</HeaderTitle>
+    <HeaderControl>{props.children}</HeaderControl>
   </HeaderWrapper>
 )
-

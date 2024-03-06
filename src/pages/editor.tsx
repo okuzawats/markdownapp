@@ -70,16 +70,12 @@ export const Editor: React.FC<Props> = (props) => {
     markdownWorker.postMessage(text)
   }, [text])
 
-  return(
+  return (
     <>
       <HeaderArea>
         <Header title="Markdown Editor">
-          <Button onClick={() => setShowModal(true)}>
-            保存
-          </Button>
-          <Link to="/history">
-            履歴
-          </Link>
+          <Button onClick={() => setShowModal(true)}>保存</Button>
+          <Link to="/history">履歴</Link>
         </Header>
       </HeaderArea>
       <Wrapper>
@@ -88,7 +84,7 @@ export const Editor: React.FC<Props> = (props) => {
           value={text}
         />
         <Preview>
-          <div dangerouslySetInnerHTML={{__html: html}} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </Preview>
       </Wrapper>
       {showModal && (

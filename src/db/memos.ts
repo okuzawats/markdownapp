@@ -15,7 +15,7 @@ db.version(1).stores({ memos: '&datetime' }) // datetimeをindexに指定
 const memos: Dexie.Table<MemoRecord, string> = db.table('memos')
 
 // 引数としてタイトルとテキストを受け取り、非同期で保存処理を実行する。
-export const putMemo = async(title: string, text: string): Promise<void> => {
+export const putMemo = async (title: string, text: string): Promise<void> => {
   const datetime = new Date().toISOString()
   await memos.put({ datetime, title, text })
 }
@@ -32,7 +32,8 @@ export const getMemoPageCount = async (): Promise<number> => {
 // 非同期で読み込み、datetimeの逆順の配列を返す。
 export const getMemos = (page: number): Promise<MemoRecord[]> => {
   const offset = (page - 1) * NUM_PER_PAGE
-  return memos.orderBy('datetime')
+  return memos
+    .orderBy('datetime')
     .reverse()
     .offset(offset)
     .limit(NUM_PER_PAGE)

@@ -28,8 +28,11 @@ interface Props {
 // テキストとクリック時に呼び出される関数を受け取り、スタイリングされたボタンを返すコンポーネント
 export const Button: React.FC<Props> = (props) => {
   return (
-    <StyledButton onClick={props.onClick} className={props.cancel ? 'cancel' : ''}>
-        {props.children}
+    <StyledButton
+      onClick={props.onClick}
+      className={props.cancel ? 'cancel' : ''}
+    >
+      {props.children}
     </StyledButton>
   )
 }
