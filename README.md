@@ -45,3 +45,9 @@ $ npm run build
 ```console
 $ npm start
 ```
+
+## フォーマット
+
+```console
+$ npm run prettier-format
+```

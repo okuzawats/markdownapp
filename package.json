@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack serve --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "prettier-format": "prettier --config .prettierrc.yml 'src/**/*.{ts,tsx}' --write"
   },
   "dependencies": {
     "@types/marked": "^2.0.5",
