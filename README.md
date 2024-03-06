@@ -30,6 +30,7 @@ $ npm i worker-loader@3
 
 ```console
 $ npm i webpack-dev-server@3
+$ npm i prettier --save-dev
 ```
 
 ## ビルド
