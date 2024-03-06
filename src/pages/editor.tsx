@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as ReactMarkdown from 'react-markdown'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Button } from '../components/button'
@@ -8,7 +7,7 @@ import { SaveModal } from '../components/save_modal'
 import { putMemo } from '../db/memos'
 import MarkdownWorker from 'worker-loader!../worker/convert_markdown_worker.ts'
 
-const testWorker = new MarkdownWorker()
+const markdownWorker = new MarkdownWorker()
 const { useState, useEffect } = React
 
 const Wrapper = styled.div`
@@ -56,16 +55,19 @@ interface Props {
 
 export const Editor: React.FC<Props> = (props) => {
   const { text, setText } = props
+  const [html, setHtml] = useState('')
   const [showModal, setShowModal] = useState(false)
 
+  // MarkdownWorkerの生成したHTMLを受け取り、反映する。
   useEffect(() => {
-    testWorker.onmessage = (event) => {
-      console.log('Main thread Received:', event.data)
+    markdownWorker.onmessage = (event) => {
+      setHtml(event.data.html)
     }
   }, [])
 
+  // textの変更を監視して、MarkdownWorkerにtextを渡す。
   useEffect(() => {
-    testWorker.postMessage(text)
+    markdownWorker.postMessage(text)
   }, [text])
 
   return(
@@ -86,7 +88,7 @@ export const Editor: React.FC<Props> = (props) => {
           value={text}
         />
         <Preview>
-          <ReactMarkdown>{text}</ReactMarkdown>
+          <div dangerouslySetInnerHTML={{__html: html}} />
         </Preview>
       </Wrapper>
       {showModal && (
